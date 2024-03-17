@@ -13,7 +13,7 @@ const TransitionProvider = ({ children }) => {
         className="w-screen h-screen bg-gradient-to-b from-[#222222] to-black"
       >
         <motion.div
-          className="h-screen w-screen fixed bg-gradient-to-b from-black to-[#222222] rounded-b-[100px] z-40"
+          className="h-screen w-screen fixed bg-gradient-to-b from-black to-[#222222] rounded-b-[100px] z-30"
           animate={{ height: '0vh' }}
           exit={{ height: '140vh' }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -28,7 +28,7 @@ const TransitionProvider = ({ children }) => {
           {pathName.toUpperCase(1).substring(1)}
         </motion.div>
         <motion.div
-          className="h-screen w-screen fixed bg-gradient-to-b from-black to-[#222222] rounded-t-[100px] bottom-0 z-40"
+          className="h-screen w-screen fixed bg-gradient-to-b from-black to-[#222222] rounded-t-[100px] bottom-0 z-30"
           initial={{ height: '140vh' }}
           animate={{ height: '0vh', transition: { delay: 0.5 } }}
         />

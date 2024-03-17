@@ -3,14 +3,17 @@ import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
+import Loading from '@/components/Loading';
 
 const ContactPage = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     setSuccess(false);
     setError(false);
 
@@ -26,9 +29,11 @@ const ContactPage = () => {
       .then(
         () => {
           setSuccess(true);
+          setIsLoading(false);
           form.current.reset();
         },
         () => {
+          setIsLoading(false);
           setError(true);
         }
       );
@@ -77,8 +82,13 @@ const ContactPage = () => {
             className="bg-transparent border-b-2 border-b-black outline-none"
             name="user_email"
           />
-          <button className="bg-[#607D8B] rounded font-semibold text-[#DEE4E7] p-4">
-            Send
+          <button
+            disabled={isLoading}
+            className={`bg-[#222222] rounded font-semibold text-[#DEE4E7] p-4 ${
+              isLoading ? 'hover:bg-black' : 'hover:bg-[#607D8B]'
+            }`}
+          >
+            {isLoading ? <Loading /> : 'Send'}
           </button>
           {success && (
             <span className="font-semibold text-[#009B94]">

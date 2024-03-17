@@ -3,6 +3,7 @@ import { motion, useInView, useScroll } from 'framer-motion';
 import Brain from '@/components/Brain';
 import { useRef } from 'react';
 import Image from 'next/image';
+import Head from 'next/head';
 
 const skills = [
   { id: 1, title: 'JavaScript' },
@@ -279,7 +280,7 @@ const AboutPage = () => {
           </div>
         </div>
         {/* SVG CONTAINER */}
-        <div className="hidden lg:block w-1/3 sticky top-0 z-30 xl:w-1/2">
+        <div className="hidden lg:block w-1/3 sticky top-0 z-20 xl:w-1/2">
           <Brain scrollYProgress={scrollYProgress} />
         </div>
       </div>

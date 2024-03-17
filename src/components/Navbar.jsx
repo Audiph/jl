@@ -103,7 +103,7 @@ const Navbar = () => {
       <div className="hidden md:flex justify-end gap-4 w-1/3">
         {socLinks.map((link) => {
           return (
-            <Link href={link.url} key={link.src}>
+            <Link href={link.url} key={link.src} target="_blank">
               <Image src={link.src} alt={link.alt} width={24} height={24} />
             </Link>
           );

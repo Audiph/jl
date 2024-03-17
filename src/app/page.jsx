@@ -20,7 +20,7 @@ const HomePage = () => {
     >
       <div className="h-full flex flex-col lg:flex-row px-4 gap-8 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* IMAGE CONTAINER */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 relative">
+        <div className="h-1/2 lg:h-full lg:w-1/2 relative z-0">
           <Image
             width={2048}
             height={2839}
@@ -60,10 +60,10 @@ const HomePage = () => {
           <p className="text-[#B0BEC5] md:text-xl">{description}</p>
           {/* BUTTONS */}
           <div className="w-full flex gap-4">
-            <button className="p-4 rounded-lg ring-1 ring-[#ECEFF1] bg-[#ECEFF1] text-[#222222]">
+            <button className="p-4 rounded-lg ring-1 ring-[#ECEFF1] bg-[#ECEFF1] text-[#222222] hover:bg-transparent hover:text-[#ECEFF1]">
               View My Work
             </button>
-            <button className="p-4 rounded-lg ring-1 ring-[#ECEFF1] text-[#ECEFF1]">
+            <button className="p-4 rounded-lg ring-1 ring-[#ECEFF1] text-[#ECEFF1] hover:bg-[#ECEFF1] hover:text-[#222222]">
               Contact Me
             </button>
           </div>
