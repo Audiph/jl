@@ -44,16 +44,16 @@ const PortfolioPage = () => {
 
   return (
     <motion.div
-      className="h-full"
+      className="h-full relative"
       initial={{ y: '-200vh' }}
       animate={{ y: '0%' }}
       transition={{ duration: 1 }}
     >
-      <div className="h-[600vh] relative" ref={ref}>
+      <div className="h-[600vh]" ref={ref}>
         <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-24 items-center justify-center text-8xl text-center text-[#ECEFF1]">
           My Works
           <div>
-            <span className="mouse relative block mx-auto border-2 border-[#B0BEC5] rounded-full h-24 w-12">
+            <span className="mouse block mx-auto border-2 border-[#B0BEC5] rounded-full h-24 w-12">
               <motion.span
                 initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 0, y: '20px' }}
