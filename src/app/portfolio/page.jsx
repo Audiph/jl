@@ -12,7 +12,7 @@ const items = [
     alt: 'Cover Me Video',
     description:
       "An insurance product offering comprehensive coverage designed to safeguard individuals and families against life's uncertainties. Tailored to meet diverse needs, CoverMe provides financial protection in areas such as health, critical illness, disability, and life insurance.",
-    url: 'https://tripx.prd.coverme.com/travel-insurance',
+    url: 'https://tripx.prd.coverme.com/travel-insurance/get-a-quote',
   },
   {
     id: 2,
@@ -94,7 +94,12 @@ const PortfolioPage = () => {
                   <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px] text-[#B0BEC5]">
                     {item.description}
                   </p>
-                  <Link href={item.url} className="flex justify-end">
+                  <Link
+                    href={item.url}
+                    className="flex justify-end"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <button className="p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-[#ECEFF1] text-[#222222] font-semibold m-4 rounded">
                       See Demo
                     </button>

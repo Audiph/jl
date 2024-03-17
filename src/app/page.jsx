@@ -5,6 +5,7 @@ import GraphemeSplitter from 'grapheme-splitter';
 
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
+import Link from 'next/link';
 
 const description =
   "Explore to delve into the journey of a passionate Full Stack Software Engineer. From front-end development using React and Next.js to backend mastery with Node.js and Python, I specialize in crafting innovative solutions that fuel business growth and enhance user engagement. Let's collaborate to turn ideas into reality";
@@ -61,10 +62,10 @@ const HomePage = () => {
           {/* BUTTONS */}
           <div className="w-full flex gap-4">
             <button className="p-4 rounded-lg ring-1 ring-[#ECEFF1] bg-[#ECEFF1] text-[#222222] hover:bg-transparent hover:text-[#ECEFF1]">
-              View My Work
+              <Link href="/portfolio">View My Work</Link>
             </button>
             <button className="p-4 rounded-lg ring-1 ring-[#ECEFF1] text-[#ECEFF1] hover:bg-[#ECEFF1] hover:text-[#222222]">
-              Contact Me
+              <Link href="/contact">Contact Me</Link>
             </button>
           </div>
         </div>

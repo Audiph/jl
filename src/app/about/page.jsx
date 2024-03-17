@@ -200,7 +200,7 @@ const AboutPage = () => {
           >
             {/* EXPERIENCE TITLE */}
             <motion.h1
-              initial={{ x: '-310px' }}
+              initial={{ x: '-350px' }}
               animate={isExperienceRefInView ? { x: 0 } : {}}
               transition={{ delay: 0.2 }}
               className="font-bold text-2xl text-[#ECEFF1]"

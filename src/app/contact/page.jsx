@@ -3,19 +3,44 @@ import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
+import { validRegex } from '@/app/utils/common';
 import Loading from '@/components/Loading';
+import useScreenSize from '@/app/utils/useScreenSize';
 
 const ContactPage = () => {
+  const defaultError = { err: false, message: '' };
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(defaultError);
   const [isLoading, setIsLoading] = useState(false);
   const form = useRef();
+  const { height } = useScreenSize();
 
   const sendEmail = (e) => {
     e.preventDefault();
     setIsLoading(true);
     setSuccess(false);
-    setError(false);
+    setError(defaultError);
+
+    const formData = new FormData(e.currentTarget);
+    const { user_message, user_email } = Object.fromEntries(formData);
+
+    if (user_message === '') {
+      setError({ err: true, message: 'Message must not be empty!' });
+      setIsLoading(false);
+      return;
+    }
+
+    if (user_email === '') {
+      setError({ err: true, message: 'E-mail must not be empty!' });
+      setIsLoading(false);
+      return;
+    }
+
+    if (!user_email.match(validRegex)) {
+      setError({ err: true, message: 'Invalid E-mail Address!' });
+      setIsLoading(false);
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -34,7 +59,7 @@ const ContactPage = () => {
         },
         () => {
           setIsLoading(false);
-          setError(true);
+          setError({ err: true, message: 'Something went wrong!' });
         }
       );
   };
@@ -71,14 +96,22 @@ const ContactPage = () => {
           className="h-1/2 lg:h-full lg:w-1/2 bg-[#DEE4E7] rounded-xl flex flex-col gap-8 justify-center p-24"
         >
           <span>Dear Jeff</span>
-          <textarea
-            rows={6}
-            className="bg-transparent border-b-2 border-b-black outline-none resize-none"
-            name="user_message"
-          />
+          {height <= 1050 ? (
+            <input
+              type="text"
+              className="bg-transparent border-b-2 border-b-black outline-none"
+              name="user_message"
+            />
+          ) : (
+            <textarea
+              rows={6}
+              className="bg-transparent border-b-2 border-b-black outline-none resize-none"
+              name="user_message"
+            />
+          )}
           <span>My E-mail:</span>
           <input
-            type="email"
+            type="text"
             className="bg-transparent border-b-2 border-b-black outline-none"
             name="user_email"
           />
@@ -95,9 +128,9 @@ const ContactPage = () => {
               Your message has been sent successfully!
             </span>
           )}
-          {error && (
+          {error.err && (
             <span className="font-semibold text-[#BF0000]">
-              Something went wrong!
+              {error.message}
             </span>
           )}
         </form>
