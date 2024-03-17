@@ -1,15 +1,16 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import GraphemeSplitter from 'grapheme-splitter';
 
-const aboutMe = {
-  title: 'Hello! This is Jeff!',
-  description:
-    "Explore to delve into the journey of a passionate Full Stack Software Engineer. From front-end development using React and Next.js to backend mastery with Node.js and Python, I specialize in crafting innovative solutions that fuel business growth and enhance user engagement. Let's collaborate to turn ideas into reality",
-};
+import { motion } from 'framer-motion';
+import { TypeAnimation } from 'react-type-animation';
+
+const description =
+  "Explore to delve into the journey of a passionate Full Stack Software Engineer. From front-end development using React and Next.js to backend mastery with Node.js and Python, I specialize in crafting innovative solutions that fuel business growth and enhance user engagement. Let's collaborate to turn ideas into reality";
 
 const HomePage = () => {
+  const splitter = new GraphemeSplitter();
   return (
     <motion.div
       className="h-full"
@@ -21,21 +22,42 @@ const HomePage = () => {
         {/* IMAGE CONTAINER */}
         <div className="h-1/2 lg:h-full lg:w-1/2 relative">
           <Image
+            width={2048}
+            height={2839}
             src="/hero.png"
             alt="JL's Picture"
-            fill
             priority
-            className="object-contain drop-shadow-xl"
+            className="absolute h-full w-full inset-0 text-transparent object-contain drop-shadow-xl"
           />
         </div>
         {/* TEXT CONTAINER */}
         <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center">
           {/* TITLE */}
-          <h1 className="text-4xl md:text-6xl font-bold text-[#ECEFF1]">
-            {aboutMe.title}
-          </h1>
+          <div className="text-4xl md:text-6xl font-bold text-[#ECEFF1]">
+            <TypeAnimation
+              splitter={(str) => splitter.splitGraphemes(str)}
+              sequence={[
+                // Same substring at the start will only be typed once, initially
+                "Hello, I'm Jeff!",
+                3000,
+                'Hello, ako si Jeff!',
+                3000,
+                'こんにちは、ジェフです！',
+                3000,
+                '你好，我是杰夫！',
+                3000,
+                '안녕하세요, 제프입니다!',
+                3000,
+                'Привіт, я Джефф!',
+                3000,
+              ]}
+              speed={30}
+              style={{ fontSize: '2em' }}
+              repeat={Infinity}
+            />
+          </div>
           {/* DESCRIPTION */}
-          <p className="text-[#B0BEC5] md:text-xl">{aboutMe.description}</p>
+          <p className="text-[#B0BEC5] md:text-xl">{description}</p>
           {/* BUTTONS */}
           <div className="w-full flex gap-4">
             <button className="p-4 rounded-lg ring-1 ring-[#ECEFF1] bg-[#ECEFF1] text-[#222222]">

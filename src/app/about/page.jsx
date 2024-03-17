@@ -2,6 +2,7 @@
 import { motion, useInView, useScroll } from 'framer-motion';
 import Brain from '@/components/Brain';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 const skills = [
   { id: 1, title: 'JavaScript' },
@@ -62,7 +63,7 @@ const AboutPage = () => {
 
   return (
     <motion.div
-      className="h-full"
+      className="h-full overflow-x-hidden"
       initial={{ y: '-200vh' }}
       animate={{ y: '0%' }}
       transition={{ duration: 1 }}
@@ -73,22 +74,33 @@ const AboutPage = () => {
         <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:w-1/2">
           {/* BIOGRAPHY CONTAINER */}
           <div className="flex flex-col gap-12 justify-center">
+            {/* BIOGRAPHY AVATAR */}
+            <Image
+              src="/avatar.png"
+              width={112}
+              height={112}
+              alt="Picture of the author"
+              className="w-28 h-28 rounded-full object-cover"
+            />
             {/* BIOGRAPHY TITLE */}
             <h1 className="font-bold text-2xl text-[#ECEFF1]">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESCRIPTION */}
             <p className="text-lg text-[#B0BEC5]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              A driven Full Stack Software Engineer with over two years of
+              industry expertise, pursuing an engaging opportunity to apply my
+              proficiency in crafting, architecting, and sustaining top-tier
+              user-centric web applications. Proficient in multiple frameworks,
+              I am recognized for my ability to produce concise and effective
+              code. I am enthusiastic about utilizing my technical acumen,
+              innovative thinking, and dedication to problem-solving to deliver
+              exceptional solutions that meet client requirements and foster
+              organizational advancement.
             </p>
             {/* BIOGRAPHY QUOTE */}
             <span className="italic text-[#B0BEC5]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              “Becoming a pro is like jumping onto a moving train that doesn’t
+              stop. You can never get off of it. Not until you lose and fall
+              off.” – Rei Kiriyama
             </span>
             {/* BIOGRAPHY SIGNATURE SVG */}
             <div className="self-end">
@@ -188,7 +200,7 @@ const AboutPage = () => {
           >
             {/* EXPERIENCE TITLE */}
             <motion.h1
-              initial={{ x: '-300px' }}
+              initial={{ x: '-310px' }}
               animate={isExperienceRefInView ? { x: 0 } : {}}
               transition={{ delay: 0.2 }}
               className="font-bold text-2xl text-[#ECEFF1]"

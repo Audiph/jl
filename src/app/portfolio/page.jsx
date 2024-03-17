@@ -1,6 +1,5 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
 
@@ -51,8 +50,25 @@ const PortfolioPage = () => {
       transition={{ duration: 1 }}
     >
       <div className="h-[600vh] relative" ref={ref}>
-        <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center text-[#ECEFF1]">
+        <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-24 items-center justify-center text-8xl text-center text-[#ECEFF1]">
           My Works
+          <div>
+            <span className="mouse relative block mx-auto border-2 border-[#B0BEC5] rounded-full h-24 w-12">
+              <motion.span
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 0, y: '20px' }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: 'easeInOut',
+                }}
+                className="move absolute bg-[#B0BEC5] rounded-full h-3 w-3 left-0 right-0 mx-auto"
+              ></motion.span>
+            </span>
+            <h2 className="text-[#B0BEC5] font-roboto font-light text-xs mt-2">
+              Scroll down
+            </h2>
+          </div>
         </div>
         <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
           <motion.div style={{ x }} className="flex">
@@ -70,6 +86,7 @@ const PortfolioPage = () => {
                     <video
                       className="aspect-video w-80 md:w-96 lg:w-[500px] xl:w-[600px]"
                       autoPlay
+                      loop
                     >
                       <source src={item.src} />
                     </video>
@@ -105,13 +122,13 @@ const PortfolioPage = () => {
             </defs>
             <text fill="#B0BEC5">
               <textPath xlinkHref="#circlePath" className="text-xl">
-                Full Stack Software Engineer & Designer
+                Full Stack Software Engineer/Designer
               </textPath>
             </text>
           </motion.svg>
           <Link
             href="/contact"
-            className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-[#ECEFF1] text-[#222222] rounded-full flex items-center justify-center"
+            className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-[#ECEFF1] hover:bg-[#009B94] text-[#222222] rounded-full flex items-center justify-center"
           >
             Hire Me
           </Link>
