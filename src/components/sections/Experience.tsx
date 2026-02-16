@@ -17,22 +17,22 @@ const ExperienceCard = ({ experience, index }: { experience: ExperienceType; ind
     <ScrollReveal type={revealTypes[index % 4]} delay={index * 0.15}>
       <div ref={cardRef} className="relative pb-10 pl-8 last:pb-0">
         {/* Timeline Line */}
-        <div className="bg-border absolute top-0 bottom-0 left-0 w-[2px]">
+        <div className="bg-border absolute top-0 bottom-0 left-0 w-0.5">
           <motion.div
             initial={{ height: 0 }}
             animate={isInView ? { height: '100%' } : {}}
             transition={{ duration: 1, delay: index * 0.15 }}
-            className="from-primary w-full bg-gradient-to-b to-transparent"
+            className="from-primary w-full bg-linear-to-b to-transparent"
           />
         </div>
 
         {/* Timeline Dot */}
-        <div className="absolute top-0 left-0 flex h-4 w-[2px] items-center justify-center">
+        <div className="absolute top-0 left-0 flex h-4 w-0.5 items-center justify-center">
           <motion.div
             initial={{ scale: 0 }}
             animate={isInView ? { scale: 1 } : {}}
             transition={{ duration: 0.4, delay: index * 0.15 + 0.2 }}
-            className="glow-effect bg-primary absolute -left-[5px] h-3 w-3 rounded-full"
+            className="glow-effect bg-primary absolute -left-1.25 h-3 w-3 rounded-full"
           />
         </div>
 
@@ -79,7 +79,7 @@ const Experience = () => {
           <div className="mb-12 flex items-center gap-4">
             <span className="text-mono text-primary text-sm">04</span>
             <h2 className="heading-md">Experience</h2>
-            <span className="bg-border h-[1px] flex-1" />
+            <span className="bg-border h-px flex-1" />
           </div>
         </ScrollReveal>
 
@@ -94,7 +94,9 @@ const Experience = () => {
         <ScrollReveal type="scale" delay={0.5}>
           <div className="mt-12 text-center">
             <motion.a
-              href="#"
+              href="https://1drv.ms/b/c/12a5aecd42f99f92/IQCIzd9YH-rNR5oFbR9BndUtAYttdlxkdz0Y2qmTUa69bso?e=xJlHws"
+              target="_blank"
+              rel="noopener noreferrer"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-3 rounded-full border px-8 py-4 font-semibold transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

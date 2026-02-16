@@ -64,7 +64,7 @@ const Technologies = () => {
           <div className="mb-12 flex items-center gap-4">
             <span className="text-mono text-primary text-sm">03</span>
             <h2 className="heading-md">Technologies</h2>
-            <span className="bg-border h-[1px] flex-1" />
+            <span className="bg-border h-px flex-1" />
           </div>
         </ScrollReveal>
 

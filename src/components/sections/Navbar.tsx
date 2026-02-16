@@ -3,7 +3,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { navLinks } from '@/data/portfolio-data';
+import { navLinks, socialLinks } from '@/data/portfolio-data';
+import Link from 'next/link';
 
 const menuVariants = {
   closed: {
@@ -72,7 +73,7 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
         className={`fixed top-0 right-0 left-0 z-50 transition-all duration-500 ${
-          isScrolled ? 'glass-card py-4' : 'py-6'
+          isScrolled ? 'glass-card border-none py-4' : 'py-6'
         }`}
       >
         <nav className="container-custom flex items-center justify-between">
@@ -167,7 +168,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="bg-background/80 fixed inset-0 z-40 backdrop-blur-sm md:hidden"
+              className="bg-background/80 fixed inset-0 z-60 backdrop-blur-sm md:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
@@ -177,7 +178,7 @@ const Navbar = () => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="border-border bg-card fixed top-0 right-0 bottom-0 z-40 w-[80%] max-w-sm border-l md:hidden"
+              className="border-border bg-card fixed top-0 right-0 bottom-0 z-60 w-[80%] max-w-sm border-l md:hidden"
             >
               <div className="flex h-full flex-col px-8 pt-24 pb-8">
                 {/* Navigation Links */}
@@ -241,14 +242,16 @@ const Navbar = () => {
                   transition={{ delay: 0.6, duration: 0.4 }}
                   className="border-border mt-8 flex justify-center gap-6 border-t pt-8"
                 >
-                  {['GitHub', 'LinkedIn'].map((social) => (
-                    <a
-                      key={social}
-                      href="#"
+                  {socialLinks.map((social) => (
+                    <Link
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary text-sm transition-colors"
                     >
-                      {social}
-                    </a>
+                      {social.name}
+                    </Link>
                   ))}
                 </motion.div>
               </div>

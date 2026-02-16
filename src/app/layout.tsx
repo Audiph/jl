@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Jeff Lagarde | Full Stack Software Engineer',
+  title: 'Jeff Lagarde | Software Engineer',
   description:
     'Portfolio of Jeff (Marc Joseph Lagarde) — Full Stack Software Engineer specializing in React, NextJS, TypeScript, and modern web technologies.',
 };

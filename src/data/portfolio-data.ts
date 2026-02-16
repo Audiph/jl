@@ -28,7 +28,16 @@ export const navLinks: NavLink[] = [
   { name: 'Contact', href: '#contact' },
 ];
 
-export const socialLinks: SocialLink[] = [
+export const socialLinks: Omit<SocialLink, 'icon'>[] = [
+  { name: 'GitLab', href: 'https://gitlab.com/jlagarde' },
+  { name: 'GitHub', href: 'https://github.com/Audiph' },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/marc-joseph-lagarde-198652172/',
+  },
+];
+
+export const socialLinksWithIcon: SocialLink[] = [
   { name: 'GitLab', href: 'https://gitlab.com/jlagarde', icon: 'gitlab' },
   { name: 'GitHub', href: 'https://github.com/Audiph', icon: 'github' },
   {
@@ -369,5 +378,6 @@ export const heroCodeSnippet = `const developer = {
   name: "Jeff Lagarde",
   skills: ["React", "NextJS",
   "TypeScript", "NodeJS", "Python"],
-  passion: "Infinitely curious and always learning",
+  passion: "Infinitely curious
+  and always learning",
 };`;

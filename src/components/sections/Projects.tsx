@@ -25,12 +25,12 @@ const ProjectCard = ({
   return (
     <ScrollReveal type={revealTypes[index % 4]} delay={index * 0.1}>
       <div className="group relative">
-        <div className="border-border/50 from-card to-card/50 hover:border-primary/40 hover:shadow-primary/10 relative overflow-hidden rounded-2xl border bg-gradient-to-br transition-all duration-500 hover:shadow-2xl">
+        <div className="border-border/50 from-card to-card/50 hover:border-primary/40 hover:shadow-primary/10 relative overflow-hidden rounded-2xl border bg-linear-to-br transition-all duration-500 hover:shadow-2xl">
           {/* Gradient Overlay */}
-          <div className="from-primary/5 to-accent/5 absolute inset-0 bg-gradient-to-br via-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          <div className="from-primary/5 to-accent/5 absolute inset-0 bg-linear-to-br via-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
           {/* Image Container */}
-          <div className="relative aspect-[16/10] overflow-hidden">
+          <div className="relative aspect-16/10 overflow-hidden">
             <Image
               src={project.image}
               alt={project.title}
@@ -39,7 +39,7 @@ const ProjectCard = ({
             />
 
             {/* Overlay gradient */}
-            <div className="from-card absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-60" />
+            <div className="from-card absolute inset-0 bg-linear-to-t via-transparent to-transparent opacity-60" />
 
             {/* Featured Badge */}
             {project.featured && (
@@ -172,7 +172,7 @@ const Projects = () => {
             <div className="mb-12 flex items-center gap-4">
               <span className="text-mono text-primary text-sm">02</span>
               <h2 className="heading-md">Projects</h2>
-              <span className="bg-border h-[1px] flex-1" />
+              <span className="bg-border h-px flex-1" />
             </div>
           </ScrollReveal>
 
@@ -191,24 +191,27 @@ const Projects = () => {
           {/* View All Link */}
           <ScrollReveal type="fade-up" delay={0.4}>
             <div className="mt-12 flex items-center justify-center gap-2">
-              <span className="inline-flex items-center font-medium">View all projects on</span>
-              <Link
-                href="https://github.com/Audiph"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary inline-flex items-center gap-2 font-medium transition-all duration-300 hover:gap-4"
-              >
-                GitHub
-              </Link>
-              <span className="inline-flex items-center font-medium">/</span>
-              <Link
-                href="https://gitlab.com/jlagarde"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary inline-flex items-center gap-2 font-medium transition-all duration-300 hover:gap-4"
-              >
-                Gitlab
+              <span className="group inline-flex items-center gap-2 font-medium">
+                View all projects on
+                <Link
+                  href="https://github.com/Audiph"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-medium"
+                >
+                  GitHub
+                </Link>
+                /
+                <Link
+                  href="https://gitlab.com/jlagarde"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-medium"
+                >
+                  Gitlab
+                </Link>
                 <svg
+                  className="text-primary transition-transform duration-300 group-hover:translate-x-2"
                   width="20"
                   height="20"
                   viewBox="0 0 24 24"
@@ -218,7 +221,7 @@ const Projects = () => {
                 >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-              </Link>
+              </span>
             </div>
           </ScrollReveal>
         </div>

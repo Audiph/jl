@@ -3,7 +3,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Github, Gitlab, Linkedin, Mail } from 'lucide-react';
-import { socialLinks, personalInfo } from '@/data/portfolio-data';
+import { socialLinksWithIcon, personalInfo } from '@/data/portfolio-data';
 
 const iconMap = {
   gitlab: Gitlab,
@@ -22,7 +22,7 @@ const Footer = () => {
 
       {/* Glow Effect */}
       <div
-        className="pointer-events-none absolute bottom-0 left-1/2 h-[400px] w-[800px] -translate-x-1/2 opacity-30 blur-3xl"
+        className="pointer-events-none absolute bottom-0 left-1/2 h-100 w-200 -translate-x-1/2 opacity-30 blur-3xl"
         style={{
           background:
             'radial-gradient(ellipse at center, rgba(24, 196, 168, 0.15) 0%, transparent 70%)',
@@ -39,7 +39,7 @@ const Footer = () => {
         >
           <span className="text-mono text-primary text-sm">05</span>
           <h2 className="heading-md">Contact</h2>
-          <span className="bg-border h-[1px] flex-1" />
+          <span className="bg-border h-px flex-1" />
         </motion.div>
 
         {/* Main Content */}
@@ -102,7 +102,7 @@ const Footer = () => {
             transition={{ delay: 0.6 }}
             className="mt-16 flex justify-center gap-6"
           >
-            {socialLinks.map((social, index) => {
+            {socialLinksWithIcon.map((social, index) => {
               const Icon = iconMap[social.icon];
               return (
                 <motion.a

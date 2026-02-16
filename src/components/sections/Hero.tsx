@@ -18,7 +18,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
         transition={{ duration: 2, delay: 0.5 }}
-        className="pointer-events-none absolute top-1/4 -right-1/4 h-[800px] w-[800px] rounded-full blur-3xl"
+        className="pointer-events-none absolute top-1/4 -right-1/4 h-200 w-200 rounded-full blur-3xl"
         style={{
           background:
             'radial-gradient(ellipse at center, rgba(24, 196, 168, 0.15) 0%, transparent 70%)',
@@ -28,7 +28,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.2 }}
         transition={{ duration: 2, delay: 0.8 }}
-        className="pointer-events-none absolute -bottom-1/4 -left-1/4 h-[600px] w-[600px] rounded-full blur-3xl"
+        className="pointer-events-none absolute -bottom-1/4 -left-1/4 h-150 w-150 rounded-full blur-3xl"
         style={{
           background:
             'radial-gradient(ellipse at center, rgba(24, 196, 168, 0.15) 0%, transparent 70%)',
@@ -44,7 +44,7 @@ const Hero = () => {
             transition={{ duration: 1.4, delay: 0.3, ease: 'easeOut' }}
             className="mb-8 flex items-center gap-3"
           >
-            <span className="bg-primary h-[2px] w-12" />
+            <span className="bg-primary h-0.5 w-12" />
             <span className="text-mono text-primary text-sm tracking-wider">
               Full Stack Software Engineer
             </span>
@@ -156,7 +156,7 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-          className="from-primary h-12 w-[1px] bg-gradient-to-b to-transparent"
+          className="from-primary h-12 w-px bg-linear-to-b to-transparent"
         />
       </motion.div>
 
