@@ -10,7 +10,7 @@ import { personalInfo, stats } from '@/data/portfolio-data';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const photos = [{ src: '/images/avatar.png', alt: 'Jeff Lagarde', caption: 'Full Stack Engineer' }];
+const photos = [{ src: '/images/profile.png', alt: 'Jeff Lagarde', caption: 'Software Engineer' }];
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
