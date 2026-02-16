@@ -57,7 +57,7 @@ const About = () => {
         >
           <span className="text-mono text-primary text-sm">01</span>
           <h2 className="heading-md">About Me</h2>
-          <span className="bg-border h-[1px] flex-1" />
+          <span className="bg-border h-px flex-1" />
         </motion.div>
 
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
@@ -66,7 +66,7 @@ const About = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative overflow-hidden"
           >
             <div className="relative mx-auto aspect-square max-w-md overflow-hidden rounded-2xl">
               <AnimatePresence mode="wait">
@@ -93,7 +93,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="from-background/90 absolute right-0 bottom-0 left-0 bg-gradient-to-t to-transparent p-6"
+                className="from-background/90 absolute right-0 bottom-0 left-0 bg-linear-to-t to-transparent p-6"
               >
                 <p className="text-lg font-medium">{photos[currentPhoto].caption}</p>
               </motion.div>

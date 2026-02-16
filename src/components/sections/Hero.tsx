@@ -110,7 +110,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.4, delay: 1.4, ease: 'easeOut' }}
-            className="flex flex-wrap gap-4"
+            className="mb-4 flex flex-wrap justify-end gap-4 sm:mb-0 sm:justify-start"
           >
             <motion.a
               href="#projects"
