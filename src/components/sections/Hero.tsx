@@ -45,9 +45,7 @@ const Hero = () => {
             className="mb-8 flex items-center gap-3"
           >
             <span className="bg-primary h-0.5 w-12" />
-            <span className="text-mono text-primary text-sm tracking-wider">
-              Full Stack Software Engineer
-            </span>
+            <span className="text-mono text-primary text-sm tracking-wider">Software Engineer</span>
           </motion.div>
 
           {/* Main Title */}
