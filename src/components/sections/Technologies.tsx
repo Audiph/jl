@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { techCategories, recentTech, marqueeLogos } from '@/data/portfolio-data';
 import type { AnimationType } from '@/types';
@@ -109,13 +110,22 @@ const Technologies = () => {
             <div className="flex flex-wrap justify-center gap-3">
               {recentTech.map((tech, index) => (
                 <motion.span
-                  key={tech}
+                  key={tech.name}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ delay: 0.5 + index * 0.05, duration: 0.4 }}
-                  className="border-primary/20 bg-primary/10 text-primary hover:bg-primary/20 cursor-default rounded-full border px-4 py-2 text-sm transition-colors"
+                  className="border-primary/20 bg-primary/10 text-primary hover:bg-primary/20 inline-flex cursor-default items-center gap-2 rounded-full border px-4 py-2 text-sm transition-colors"
                 >
-                  {tech}
+                  {tech.logo && (
+                    <Image
+                      src={tech.logo}
+                      alt={`${tech.name} logo`}
+                      width={16}
+                      height={16}
+                      className="h-4 w-4 object-contain brightness-0 invert"
+                    />
+                  )}
+                  {tech.name}
                 </motion.span>
               ))}
             </div>

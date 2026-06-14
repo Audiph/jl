@@ -6,6 +6,7 @@ import type {
   Project,
   TechCategory,
   Stat,
+  RecentTech,
 } from '@/types';
 
 export const personalInfo: PersonalInfo = {
@@ -51,7 +52,7 @@ export const socialLinksWithIcon: SocialLink[] = [
 export const stats: Stat[] = [
   { number: '5+', label: 'Years Exp.' },
   { number: '15+', label: 'Projects' },
-  { number: '7', label: 'Companies' },
+  { number: '8', label: 'Companies' },
   { number: '30+', label: 'Technologies' },
 ];
 
@@ -75,6 +76,24 @@ export const experiences: Experience[] = [
       'AWS',
       'Docker',
       'Kubernetes',
+    ],
+  },
+  {
+    role: 'Full Stack Software Engineer',
+    company: 'Tempo Inc.',
+    period: 'Apr 2026 - Jun 2026',
+    description:
+      "Designed and built robust front-end solutions for Tempo's visual IDE with a focus on performance, translating UX/UI designs into functional, accessible code. Collaborated with 3–4 Agent+ customers to support their product development and integrated emerging front-end technologies to extend the platform's capabilities.",
+    highlights: [
+      'TypeScript',
+      'NextJS/React',
+      'ShadcnUI',
+      'TailwindCSS',
+      'Tempo IDE',
+      'Supabase',
+      'Storybook',
+      'Playwright',
+      'Claude Code',
     ],
   },
   {
@@ -186,6 +205,30 @@ export const experiences: Experience[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    id: 5,
+    title: "Mary's Land Farm",
+    description:
+      "Online booking and ticketing app for Mary's Land Farm, where visitors browse farm experiences, book and pay for their visit, and receive a scannable QR ticket to check in on arrival.",
+    longDescription:
+      "An online booking and ticketing platform for Mary's Land Farm, a working farm. Visitors browse available farm experiences, book and pay online, and receive a scannable QR-code ticket that staff verify for check-in on arrival. Built during the Tempo Inc. contract with a focus on a smooth booking flow and reliable payment + ticketing.",
+    tags: [
+      'TypeScript',
+      'NextJS/React',
+      'ShadcnUI',
+      'TailwindCSS',
+      'Supabase',
+      'Storybook',
+      'Playwright',
+    ],
+    image: '/images/projects/tempo-1.png',
+    screenshots: ['/images/projects/tempo-1.png', '/images/projects/tempo-2.png'],
+    demoLink: 'https://it.maryslandfarm.com/',
+    codeLink: undefined,
+    featured: true,
+    year: '2026',
+    role: 'Full Stack Software Engineer',
+  },
   {
     id: 1,
     title: 'E-Commerce Platform (42+ Brands)',
@@ -327,6 +370,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Express', experience: '5+ years' },
       { name: 'PostgreSQL', experience: '3+ years' },
       { name: 'MongoDB', experience: '5+ years' },
+      { name: 'Supabase', experience: '1+ year' },
       { name: 'REST / GraphQL', experience: '5+ years' },
     ],
   },
@@ -338,25 +382,31 @@ export const techCategories: TechCategory[] = [
       { name: 'AWS', experience: '2+ years' },
       { name: 'Azure', experience: '2+ years' },
       { name: 'CI/CD', experience: '4+ years' },
+      { name: 'Playwright', experience: '1+ year' },
       { name: 'Git', experience: '5+ years' },
       { name: 'Linux', experience: '5+ years' },
     ],
   },
 ];
 
-export const recentTech: string[] = [
-  'NextJS 16',
-  'React 19',
-  'TypeScript',
-  'TailwindCSS v4',
-  'Framer Motion',
-  'shadcn/ui',
-  'Express',
-  'MongoDB',
-  'PostgreSQL',
-  'tRPC',
-  'Turborepo',
-  'GSAP',
+export const recentTech: RecentTech[] = [
+  { name: 'NextJS 16' },
+  { name: 'React 19' },
+  { name: 'TypeScript' },
+  { name: 'TailwindCSS v4' },
+  { name: 'Framer Motion' },
+  { name: 'shadcn/ui' },
+  { name: 'Express' },
+  { name: 'MongoDB' },
+  { name: 'PostgreSQL' },
+  { name: 'tRPC' },
+  { name: 'Turborepo' },
+  { name: 'GSAP' },
+  { name: 'Tempo IDE' },
+  { name: 'Supabase' },
+  { name: 'Playwright' },
+  { name: 'Storybook' },
+  { name: 'Claude Code' },
 ];
 
 export const marqueeLogos: string[] = [
@@ -372,6 +422,9 @@ export const marqueeLogos: string[] = [
   'MongoDB',
   'Express',
   'NestJS',
+  'Supabase',
+  'Playwright',
+  'Tempo IDE',
 ];
 
 export const heroCodeSnippet = `const developer = {

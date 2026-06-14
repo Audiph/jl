@@ -94,7 +94,7 @@ const Experience = () => {
         <ScrollReveal type="scale" delay={0.5}>
           <div className="mt-12 text-center">
             <motion.a
-              href="https://1drv.ms/b/c/12a5aecd42f99f92/IQCIzd9YH-rNR5oFbR9BndUtAYttdlxkdz0Y2qmTUa69bso?e=xJlHws"
+              href="https://1drv.ms/b/c/12a5aecd42f99f92/IQAL34jswWxxTJUF0As_h3orAX9SmEG9PQPs6u3wg81qONM?e=H6CTjh"
               target="_blank"
               rel="noopener noreferrer"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-3 rounded-full border px-8 py-4 font-semibold transition-all duration-300"

@@ -59,6 +59,11 @@ export interface Stat {
   label: string;
 }
 
+export interface RecentTech {
+  name: string;
+  logo?: string;
+}
+
 export type AnimationType =
   | 'fade-up'
   | 'fade-down'
